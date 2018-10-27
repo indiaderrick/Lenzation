@@ -1,12 +1,19 @@
-  <div class="">
-    <h1> Posted by: <%=username %> </h1>
+<div class="columns">
+  <div class="column is-10-desktop">
+    <h1> Posted by: <%= username %> </h1>
     <img src="<%= image %>">
     <h3> Caption: <%= caption %> </h3>
     <h4> Date taken:  <%= date %> </h4>
-    <h4> ☟ <%= location %> </h4>
+    <h4> Location: <%= location %> <%= like %></h4>
     <form action="/posts/<%= _id%>?_method=DELETE" method="post">
       <button class=" button is-danger is-rounded">Delete this post</button>
     </form>
-      <br>
-      <a href="/posts/<%= _id %>/edit"<button class=" button is-danger is-rounded">Update this post</button></a>
+    <br>
+    <a href="/posts/<%= _id %>/edit"<button class=" button is-danger is-rounded">Update this post</button></a>
   </div>
+  <div class="is-2-desktop">
+    <br>
+    <br>
+    <a href="/posts"><button class="button is-info"> Return to gallery </button></a>
+  </div>
+</div>

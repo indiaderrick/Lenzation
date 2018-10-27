@@ -1,4 +1,5 @@
 const postController = require('../controllers/postController');
+const authController = require('../controllers/authController');
 const router = require('express').Router();
 
 // HOMEPAGE ROUTE:
@@ -6,6 +7,17 @@ router.get('/', postController.homeRoute);
 
 //ABOUT ROUTE:
 router.get('/about', postController.aboutRoute);
+
+//REGISTER ROUTE:
+router.get('/register', authController.registerFormRoute);
+router.post('/register', authController.registerRoute);
+
+// LOGIN ROUTE:
+router.get('/login', authController.loginFormRoute);
+router.post('/login', authController.loginRoute);
+
+//LOGOUT ROUTE:
+router.get('/logout', authController.logoutRoute);
 
 // INDEX ROUTE:
 router.get('/posts', postController.indexRoute);

@@ -5,6 +5,7 @@ const postSchema = mongoose.Schema({
   image: String,
   caption: String,
   date: Number,
+  like: String,
   location: String
 });
 

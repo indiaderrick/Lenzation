@@ -30,7 +30,7 @@ function showRoute(req, res) {
   Post.findById(req.params.id)
     .then(post => {
       res.render('posts/show', post)
-    })
+    });
 }
 function editRoute(req, res) {
   Post.findById(req.params.id)
@@ -46,7 +46,7 @@ function updateRoute(req, res) {
 }
 function deleteRoute(req, res) {
   Post.findByIdAndDelete(req.params.id)
-  .then(() => res.redirect('/posts'));
+    .then(() => res.redirect('/posts'));
 }
 
 module.exports = {
