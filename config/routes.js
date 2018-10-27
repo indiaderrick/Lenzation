@@ -19,12 +19,12 @@ router.post('/posts', postController.createRoute);
 //SHOW ROUTE:
 router.get('/posts/:id', postController.showRoute);
 
-// // EDIT ROUTE:
-// router.get('/posts/:id/edit', postController.editRoute);
-//
-// // UPDATE ROUTE:
-// router.put('/posts/:id', postController.updateRoute);
-//
+// EDIT ROUTE:
+router.get('/posts/:id/edit', postController.editRoute);
+
+// UPDATE ROUTE:
+router.put('/posts/:id', postController.updateRoute);
+
 // //DELETE ROUTE:
 // router.delete('/posts/:id', postController.deleteRoute);
 

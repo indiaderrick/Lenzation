@@ -32,12 +32,18 @@ function showRoute(req, res) {
       res.render('posts/show', post)
     })
 }
-// function editRoute(req, res) {
-//
-// }
-// function updateRoute(req, res) {
-//
-// }
+function editRoute(req, res) {
+  Post.findById(req.params.id)
+    .then(post => {
+      res.render('posts/edit', post);
+    });
+}
+function updateRoute(req, res) {
+  Post.findByIdAndUpdate(req.params.id, req.body)
+    .then(post => {
+      res.redirect(`/posts/${post._id}`)
+    });
+}
 // function deleteRoute(req, res) {
 //
 // }
@@ -49,5 +55,7 @@ module.exports = {
   indexRoute: indexRoute,
   showRoute: showRoute,
   createRoute: createRoute,
-  newRoute: newRoute
+  newRoute: newRoute,
+  editRoute: editRoute,
+  updateRoute: updateRoute
 };

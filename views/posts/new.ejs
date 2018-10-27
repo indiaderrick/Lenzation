@@ -1,7 +1,7 @@
 <form class="" action="/posts" method="post">
 
   <div class="field">
-    <label for="username"><%=username%></label>
+    <label for="username"> Photo creds go to: </label>
     <input type="text" name="username">
   </div>
 
@@ -11,14 +11,18 @@
   </div>
 
   <div class="field">
-    <label for="caption">Add a caption:</label>
-    <input type="text" name="caption">
+    <label for="date">Date uploaded: </label>
+    <input type="number" name="date">
   </div>
 
   <div class="field">
-    <label for="name">Name</label>
-    <input type="text" name="name">
+    <label for="location">Where was this taken? </label>
+    <input type="text" name="location">
   </div>
 
+  <div class="field">
+    <label for="caption">Add a caption:</label>
+    <textarea name="caption"></textarea>
+  </div>
   <button>Upload image 📷</button>
 </form>

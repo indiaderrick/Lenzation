@@ -1,0 +1,18 @@
+body {
+  /* background-color: #DFF7F6; */
+
+}
+.navbar {
+  background-color: white;
+  box-shadow: 0 0 50px silver;
+}
+.logo {
+  font-size: 25px;
+}
+.showTitle {
+  border-top: 20px;
+}
+/* .collection {
+  display: flex;
+  justify-content: space-between;
+} */

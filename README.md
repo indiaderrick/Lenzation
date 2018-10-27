@@ -13,3 +13,6 @@ port
 
 mongod
 nodemon app
+
+
+later want to change it so that it automatically comes up with date posted when you post.

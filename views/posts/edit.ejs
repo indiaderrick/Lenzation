@@ -1,0 +1,28 @@
+<form class="" action="/posts/<%= _id %>?_method=PUT" method="post">
+
+  <div class="field">
+    <label for="username"> Photo creds go to: </label>
+    <input type="text" name="username" value="<%= username %>">
+  </div>
+
+  <div class="field">
+    <label for="image">Photo URL:</label>
+    <input type="text" name="image" value="<%= image %>">
+  </div>
+
+  <div class="field">
+    <label for="date">Date uploaded: </label>
+    <input type="number" name="date" value="<%= date %>">
+  </div>
+
+  <div class="field">
+    <label for="location">Where was this taken? </label>
+    <input type="text" name="location" value="<%= location %>">
+  </div>
+
+  <div class="field">
+    <label for="caption">Add a caption:</label>
+    <textarea name="caption"><%= caption %></textarea>
+  </div>
+  <button>Update image 📷</button>
+</form>

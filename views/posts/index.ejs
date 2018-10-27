@@ -1,12 +1,15 @@
-<h1> Browse photos below </h1>
-<p class="content"> <%= posts.length %> puppies added so far!</p>
-<div class="">
-  <% posts.forEach(post => { %>
-    <div class="individualPost">
-      <a href="/posts/<%= post.id %>">
-        <img src=<%= post.image %> alt=<%= post.username%>>
-        <h3> <%= post.caption %> </h3>
-      </a>
+
+<div>
+  <h1 class="title-is-2" class="showTitle"> Browse photos below </h1>
+  <p class="content"> <%= posts.length %> puppies added so far!</p>
+  <div class="columns is-2 is-multiline" class="collection">
+    <% posts.forEach(post => { %>
+      <div class="card" class="column is-3-desktop">
+        <a href="/posts/<%= post.id %>">
+          <img src=<%= post.image %> alt=<%= post.username%>>
+          <h3> <%= post.caption %> </h3>
+        </a>
+      </div>
+      <% }) %>
     </div>
-    <% }) %>
 </div>
