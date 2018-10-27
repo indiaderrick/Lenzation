@@ -1,0 +1,12 @@
+<h1> Browse photos below </h1>
+<p class="content"> <%= posts.length %> puppies added so far!</p>
+<div class="">
+  <% posts.forEach(post => { %>
+    <div class="individualPost">
+      <a href="/posts/<%= post.id %>">
+        <img src=<%= post.image %> alt=<%= post.username%>>
+        <h3> <%= post.caption %> </h3>
+      </a>
+    </div>
+    <% }) %>
+</div>
