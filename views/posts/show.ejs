@@ -4,4 +4,9 @@
     <h3> Caption: <%= caption %> </h3>
     <h4> Date taken:  <%= date %> </h4>
     <h4> ☟ <%= location %> </h4>
+    <form action="/posts/<%= _id%>?_method=DELETE" method="post">
+      <button class=" button is-danger is-rounded">Delete this post</button>
+    </form>
+      <br>
+      <a href="/posts/<%= _id %>/edit"<button class=" button is-danger is-rounded">Update this post</button></a>
   </div>

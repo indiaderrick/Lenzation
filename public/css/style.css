@@ -1,16 +1,49 @@
-body {
-  /* background-color: #DFF7F6; */
-
+.body {
+  font-family: 'Roboto Mono', monospace;
 }
 .navbar {
   background-color: white;
-  box-shadow: 0 0 50px silver;
+}
+.navbar:hover{
+    box-shadow: 0 0 50px silver;
 }
 .logo {
   font-size: 25px;
+  color: black;
+  font-family: 'Roboto Mono';
+}
+.has-text-centered{
+  font-family: 'Roboto Mono';
+  font-size: 25px;
+}
+.content {
+  font-family: 'Roboto Mono';
+
+}
+
+.logo:hover {
+  color: silver;
 }
 .showTitle {
   border-top: 20px;
+}
+.imageShadow:hover {
+  box-shadow: 0 0 60px black;
+}
+.imageShadow {
+  /* background-color: white; */
+}
+.navItem {
+  color: black;
+  font-family: 'Roboto Mono';
+}
+.navItem:hover {
+  /* font-size: 18px; */
+  border-bottom: 1px solid black;
+  color: silver;
+}
+img {
+  border-radius: 10%;
 }
 /* .collection {
   display: flex;

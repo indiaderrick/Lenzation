@@ -25,8 +25,8 @@ router.get('/posts/:id/edit', postController.editRoute);
 // UPDATE ROUTE:
 router.put('/posts/:id', postController.updateRoute);
 
-// //DELETE ROUTE:
-// router.delete('/posts/:id', postController.deleteRoute);
+//DELETE ROUTE:
+router.delete('/posts/:id', postController.deleteRoute);
 
 
 module.exports = router;

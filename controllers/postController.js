@@ -44,10 +44,10 @@ function updateRoute(req, res) {
       res.redirect(`/posts/${post._id}`)
     });
 }
-// function deleteRoute(req, res) {
-//
-// }
-
+function deleteRoute(req, res) {
+  Post.findByIdAndDelete(req.params.id)
+  .then(() => res.redirect('/posts'));
+}
 
 module.exports = {
   homeRoute: homeRoute,
@@ -57,5 +57,6 @@ module.exports = {
   createRoute: createRoute,
   newRoute: newRoute,
   editRoute: editRoute,
-  updateRoute: updateRoute
+  updateRoute: updateRoute,
+  deleteRoute: deleteRoute
 };
