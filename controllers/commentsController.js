@@ -2,6 +2,7 @@ const Post = require('../models/post');
 
 function commentsCreateRoute(req, res) {
   Post.findById(req.params.postId)
+    // .populate('comments.username')
     .then(post => {
       post.comments.push(req.body);
       post.save().then(() => res.redirect(`/posts/${post.id}`));

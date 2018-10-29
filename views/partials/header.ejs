@@ -5,6 +5,9 @@
     </div>
     <div class="navbar-end">
       <ul class="navbar-menu">
+        <%if (locals.isLoggedIn) { %>
+          <li class="navbar-item"><a href='/profile' class="navItem">  <i class="far fa-user"></i> </a></li>
+        <% } %>
         <li class="navbar-item"><a href='/' class="navItem"> Home </a></li>
         <li class="navbar-item"><a href='/about' class="navItem"> About </a></li>
         <li class="navbar-item"><a href='/posts' class="navItem"> Photos <i class="fas fa-camera-retro"></i></a></li>

@@ -1,11 +1,15 @@
 const postController = require('../controllers/postController');
 const authController = require('../controllers/authController');
 const commentsController = require('../controllers/commentsController');
+const userController = require('../controllers/userController');
 const secureRoute = require('../lib/secureRoute');
 const router = require('express').Router();
 
 // HOMEPAGE ROUTE:
 router.get('/', postController.homeRoute);
+
+// PROFILE ROUTE:
+router.get('/profile', userController.profileRoute);
 
 //ABOUT ROUTE:
 router.get('/about', postController.aboutRoute);
@@ -13,6 +17,9 @@ router.get('/about', postController.aboutRoute);
 //REGISTER ROUTE:
 router.get('/register', authController.registerFormRoute);
 router.post('/register', authController.registerRoute);
+
+// // UPDATE USER ROUTE:
+// router.get('/profile/edit',  userController.editProfileRoute)
 
 // LOGIN ROUTE:
 router.get('/login', authController.loginFormRoute);

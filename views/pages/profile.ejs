@@ -1,0 +1,25 @@
+
+<div class="columns">
+  <div class="column is-6-desktop">
+
+    <% if(locals.isLoggedIn) { %>
+    <br>
+      <h2 class="has-text-centered"> Welcome back <%= locals.currentUser.username %> </h2>
+      <img class="has-text-centered" id="circlePic" src="<%= locals.currentUser.picture %>" alt="picture">
+      <% } %>
+
+    </div>
+
+
+    <div class="column is-6-desktop">
+      <br>
+      <br>
+      <br>
+      <p>NAME</p>
+      <p>AGE</p>
+      <p>DATE</p>
+      <br>
+      <br>
+      <button href="/profile/edit" class="button is-primary">Edit Profile</button>
+    </div>
+</div>

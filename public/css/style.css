@@ -46,12 +46,7 @@ nav, header {
 .showTitle {
   border-top: 20px;
 }
-.imageShadow:hover {
-  box-shadow: 0 0 60px black;
-}
-.imageShadow {
-  background-color: white;
-}
+
 .caption{
   border-bottom: 1px solid grey;
 }
@@ -68,10 +63,16 @@ nav, header {
   color: silver;
   border-bottom: 1px solid silver;
 }
-img {
-  /* border-radius: 10%; */
+img:hover {
+  opacity: 0.5;
+}
+.blackBackground:hover {
+  background-color: black;
 }
 .commentsSection {
   box-shadow: 0 0 50px silver;
   padding: 5px;
+}
+#circlePic{
+  border-radius: 50%;
 }
