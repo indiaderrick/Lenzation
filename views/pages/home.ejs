@@ -3,5 +3,9 @@
   <br>
   <br>
   <h1 class="crown"> ♕ </h1>
-  <p>Pictures are already there, you just have to take them </p>
+  <% if(locals.isLoggedIn) { %>
+    <p> ⟼ <%= locals.currentUser.username %> ⟻</p>
+   <% } else { %>
+     Login to rule the site ;)
+  <% } %>
 </div>

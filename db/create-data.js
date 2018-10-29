@@ -26,8 +26,6 @@ const newPost = [{
 }
 ];
 
-
-
 Post.create(newPost)
   .then(posts => {
     console.log(`created ${posts.length} posts!`);

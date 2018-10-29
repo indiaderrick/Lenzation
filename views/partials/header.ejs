@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar">
     <div class="navbar-start">
-      <h2 style="margin-left: 20px; margin-top: 12px;"><a href='/' class="logo"> LENZATION <span class="logo">♕</span> </a></h2>
+      <h2 style="margin-left: 20px; margin-top: 12px;"><a href='/' class="logo"> LENZATION |<span class="logo">♕</span> </a></h2>
     </div>
     <div class="navbar-end">
       <ul class="navbar-menu">
@@ -9,7 +9,7 @@
         <li class="navbar-item"><a href='/about' class="navItem"> About </a></li>
         <li class="navbar-item"><a href='/posts' class="navItem"> Photos <i class="fas fa-camera-retro"></i></a></li>
         <%if (locals.isLoggedIn) { %>
-          <li class="navbar-item"><a href='/logout' class="navItem"> Logout </a></li>
+          <li class="navbar-item"><a href='/logout' class="navItem"> Logout <%= locals.currentUser.username %> ♕</a></li>
         <% } else { %>
         <li class="navbar-item"><a href='/login' class="navItem"> Login </a></li>
         <li class="navbar-item"><a href='/register' class="navItem"> Register </a></li>

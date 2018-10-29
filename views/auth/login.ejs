@@ -1,8 +1,38 @@
-<h3> Log In: </h3>
-<form class="login" action="/login" method="post">
-  <label for="make">Email:</label>
-  <input type="text" name="email">
-  <label for="make">Password:</label>
-  <input type="text" name="password">
-  <button>Submit</button>
-</form>
+<div class="columns is-multiline">
+  <form class="login column is-6-desktop" action="/login" method="post">
+    <br>
+    <h3 class="title is-3"> Log In: </h3>
+    <div class="field column is-6-desktop">
+      <label class="label" for="make">Email:</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input is-success" type="text" name="email">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+    </div>
+    <div class="field column is-6-desktop">
+      <label class="label" for="make">Password:</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input is-success"type="text" name="password">
+        <span class="icon is-small is-left">
+          <i class="fas fa-lock"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+    </div>
+    <div class="control">
+      <button class="button is-primary">Submit</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </form>
+</div>

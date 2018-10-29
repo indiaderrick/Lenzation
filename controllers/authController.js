@@ -25,7 +25,7 @@ function loginRoute(req, res){
         res.redirect('/register');
       } else {
         req.session.userId = result._id;
-        res.redirect('/posts');
+        res.redirect('/');
       }
     });
 }

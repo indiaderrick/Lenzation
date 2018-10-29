@@ -1,21 +1,33 @@
-
-  <br>
-  <% if(locals.isLoggedIn) { %>
-    <h2 class="has-text-centered"> Welcome back <%= locals.currentUser.username %> </h2>
-   <% } else { %>
-  <h1 class="has-text-centered"> BROWSE PHOTOS BELOW </h1>
-  <% } %>
-  <p class="content">Library count: <%= posts.length %> posts so far!</p>
-  <a href="/posts/new"><button class="button"> Upload a new photo</button></a>
-<hr>
-  <div class="columns is-multiline">
-    <% posts.forEach(post => { %>
-      <div class="column is-3-desktop">
-        <a href="/posts/<%= post.id %>" class="imageShadow">
-          <img src=<%= post.image %> alt=<%= post.username%>>
-          <br>
-          <p style="text-decoration: none; color: black"  class="caption"> <%= post.caption %> </p>
-        </a>
+<br>
+<div class="columns is-multiline">
+  <div class="column is-12-desktop">
+    <% if(locals.isLoggedIn) { %>
+      <h2 class="has-text-centered"> Welcome back <%= locals.currentUser.username %> </h2>
+      <% } else { %>
+        <h1 class="has-text-centered title is-2"> BROWSE PHOTOS BELOW </h1>
+        <% } %>
+        <br>
+        <span><a href="/posts/new"><button class="button is-focused"> Upload a new photo</button></a></span>
+        <span class="content">Library count: <%= posts.length %> posts so far!</span>
+        <hr>
       </div>
-      <% }) %>
+      <br>
+      <div class="column is-1-desktop">
+
+      </div>
+      <div class="column is-10-desktop">
+        <div class="columns is-multiline">
+
+          <% posts.forEach(post => { %>
+            <div class="column is-3">
+              <a href="/posts/<%= post.id %>" class="imageShadow">
+                <img src=<%= post.image %> alt=<%= post.username%>>
+                <br>
+                <p style="text-decoration: none; color: black"  class="caption"> <%= post.caption %> </p>
+              </a>
+            </div>
+            <% }) %>
+        </div>
+        </div>
+      </div>
     </div>

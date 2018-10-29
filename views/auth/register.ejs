@@ -1,13 +1,61 @@
-<h3 class="loginPrompt"> Register ☞ </h3>
+<br>
+<h3 class="title is-3"> Register ☞ </h3>
 
-<form class="register" action="/register" method="post">
-  <label for="make">Upload a profile picture:</label>
-  <input type="text" name="picture">
-  <label for="make">Username:</label>
-  <input type="text" name="username">
-  <label for="make">Email:</label>
-  <input type="text" name="email">
-  <label for="make">Password:</label>
-  <input type="text" name="password">
-  <button>♕ Sign up here ♕ </button>
+<form class="column is-6-desktop" action="/register" method="post">
+
+  <div class="field">
+    <label class="label" for="make">Upload a profile picture:</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-success" type="text" name="picture">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+
+  <div>
+    <label class="label" for="make">Username:</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-success" type="text" name="username">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="email">Email: </label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-success" type="text" name="email">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="make">Password: </label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-success" type="text" name="password">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="control">
+    <button class="button is-link">♕ Sign up here ♕ </button>
+  </div>
 </form>
