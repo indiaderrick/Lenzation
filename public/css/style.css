@@ -2,6 +2,7 @@
   font-family: 'Roboto Mono', monospace;
   background-color: #fafafa;
 }
+
 .crown {
   font-size: 80px;
 }
@@ -10,9 +11,11 @@
 }
 .navbar {
   background-color: white;
+  height: 60px;
 }
 .navbar:hover{
     box-shadow: 0 0 50px silver;
+    /* border-bottom: 1px solid black; */
 }
 .helper{
   min-height: 65vh;
@@ -55,16 +58,30 @@ nav, header {
   background-color: white;
 }
 .caption{
-  border: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 .navItem {
   color: black;
   font-family: 'Roboto Mono';
 }
+.navbar-menu {
+  height: 100%;
+  border-left: 1px solid black;
+}
 .navItem:hover {
-  border-bottom: 1px solid black;
+  height: 100%;
   color: silver;
+  border-bottom: 1px solid silver;
 }
 img {
   border-radius: 10%;
 }
+.commentsSection {
+  box-shadow: 0 0 50px silver;
+  padding: 5px;
+}
+/* .pictureBoard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */

@@ -7,10 +7,13 @@
       <ul class="navbar-menu">
         <li class="navbar-item"><a href='/' class="navItem"> Home </a></li>
         <li class="navbar-item"><a href='/about' class="navItem"> About </a></li>
-        <li class="navbar-item"><a href='/posts' class="navItem"> Photos </a></li>
+        <li class="navbar-item"><a href='/posts' class="navItem"> Photos <i class="fas fa-camera-retro"></i></a></li>
+        <%if (locals.isLoggedIn) { %>
+          <li class="navbar-item"><a href='/logout' class="navItem"> Logout </a></li>
+        <% } else { %>
         <li class="navbar-item"><a href='/login' class="navItem"> Login </a></li>
         <li class="navbar-item"><a href='/register' class="navItem"> Register </a></li>
-        <li class="navbar-item"><a href='/logout' class="navItem"> Logout </a></li>
+        <% } %>
       </ul>
     </div>
   </nav>

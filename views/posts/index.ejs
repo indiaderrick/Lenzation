@@ -1,10 +1,14 @@
 
   <br>
+  <% if(locals.isLoggedIn) { %>
+    <h2 class="has-text-centered"> Welcome back <%= locals.currentUser.username %> </h2>
+   <% } else { %>
   <h1 class="has-text-centered"> BROWSE PHOTOS BELOW </h1>
+  <% } %>
   <p class="content">Library count: <%= posts.length %> posts so far!</p>
   <a href="/posts/new"><button class="button"> Upload a new photo</button></a>
 <hr>
-  <div class="columns is-5 is-multiline">
+  <div class="columns is-multiline">
     <% posts.forEach(post => { %>
       <div class="column is-3-desktop">
         <a href="/posts/<%= post.id %>" class="imageShadow">

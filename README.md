@@ -16,3 +16,5 @@ nodemon app
 
 
 later want to change it so that it automatically comes up with date posted when you post.
+
+Likes button --> just a heart with an event listener and the number of times you click it it goes up!

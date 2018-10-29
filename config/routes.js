@@ -1,5 +1,7 @@
 const postController = require('../controllers/postController');
 const authController = require('../controllers/authController');
+const commentsController = require('../controllers/commentsController');
+const secureRoute = require('../lib/secureRoute');
 const router = require('express').Router();
 
 // HOMEPAGE ROUTE:
@@ -17,28 +19,34 @@ router.get('/login', authController.loginFormRoute);
 router.post('/login', authController.loginRoute);
 
 //LOGOUT ROUTE:
-router.get('/logout', authController.logoutRoute);
+router.get('/logout', secureRoute, authController.logoutRoute);
 
 // INDEX ROUTE:
 router.get('/posts', postController.indexRoute);
 
+//COMMENTS CREATE ROUTE:
+router.post('/posts/:postId/comments', secureRoute, commentsController.commentsCreateRoute);
+
+//COMMENTS DELETE ROUTE:
+router.delete('/posts/:postId/comments/:commentId', secureRoute, commentsController.deleteRoute);
+
 //NEW ROUTE:
-router.get('/posts/new', postController.newRoute);
+router.get('/posts/new',secureRoute, postController.newRoute);
 
 // CREATE ROUTE:
-router.post('/posts', postController.createRoute);
+router.post('/posts', secureRoute, postController.createRoute);
 
 //SHOW ROUTE:
 router.get('/posts/:id', postController.showRoute);
 
 // EDIT ROUTE:
-router.get('/posts/:id/edit', postController.editRoute);
+router.get('/posts/:id/edit', secureRoute, postController.editRoute);
 
 // UPDATE ROUTE:
-router.put('/posts/:id', postController.updateRoute);
+router.put('/posts/:id', secureRoute, postController.updateRoute);
 
 //DELETE ROUTE:
-router.delete('/posts/:id', postController.deleteRoute);
+router.delete('/posts/:id', secureRoute, postController.deleteRoute);
 
 
 module.exports = router;

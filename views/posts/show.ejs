@@ -1,19 +1,49 @@
 <div class="columns">
-  <div class="column is-10-desktop">
+  <div class="column is-7-desktop">
     <h1> Posted by: <%= username %> </h1>
     <img src="<%= image %>">
     <h3> Caption: <%= caption %> </h3>
     <h4> Date taken:  <%= date %> </h4>
     <h4> Location: <%= location %> <%= like %></h4>
-    <form action="/posts/<%= _id%>?_method=DELETE" method="post">
-      <button class=" button is-danger is-rounded">Delete this post</button>
-    </form>
-    <br>
-    <a href="/posts/<%= _id %>/edit"<button class=" button is-danger is-rounded">Update this post</button></a>
-  </div>
-  <div class="is-2-desktop">
-    <br>
-    <br>
-    <a href="/posts"><button class="button is-info"> Return to gallery </button></a>
-  </div>
-</div>
+
+    <% if (locals.isLoggedIn) { %>
+      <form action="/posts/<%= _id%>?_method=DELETE" method="post">
+        <button class=" button is-danger is-rounded">Delete this post</button>
+      </form>
+      <br>
+      <a href="/posts/<%= _id %>/edit"<button class=" button is-danger is-rounded">Update this post</button></a>
+    </div>
+    <% } %>
+    <div class="column is-5-desktop">
+      <br>
+        <div class="postComments">
+          <% if (locals.isLoggedIn) { %>
+            <form method="POST" action="/posts/<%= _id %>/comments">
+              <label for='username'><%= locals.currentUser.username %>, make a comment:</label>
+              <input name='username' value='<%= locals.currentUser.username %>' hidden/>
+              <br>
+              <br>
+              <label for='content'>Comments: </label>
+              <textarea name='content'></textarea>
+              <button>Submit comment</button>
+            </form>
+            <% } %>
+            <div class="commentsSection">
+              <p style="font-weight: bold;"> Comments: </p>
+              <% comments.forEach(comment => { %>
+                <div>
+                  <span class="title-is-5">  <%= comment.username %>:</span>
+                  <span class="title-is-5"> <%= comment.content %> </span>
+                </div>
+                <% if(locals.isLoggedIn){ %>
+                  <form class="delete-form" method="POST" action="/posts/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
+                    <button class="button is-rounded is-small"> x </button>
+                  </form>
+                <% } %>
+                <% }) %>
+              </div>
+            <br>
+          </div>
+          <a href="/posts"><button class="button is-info"> Return to gallery </button></a>
+        </div>
+      </div>

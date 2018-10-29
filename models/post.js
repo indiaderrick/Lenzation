@@ -6,7 +6,12 @@ const postSchema = mongoose.Schema({
   caption: String,
   date: Number,
   like: String,
-  location: String
+  location: String,
+  comments: [{
+    content: String,
+    username: String
+  }
+  ]
 });
 
 const postModel = mongoose.model('Post', postSchema);
