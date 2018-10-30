@@ -61,9 +61,9 @@
           </div>
         </div>
         <% if(locals.isLoggedIn) { %>
-          <div class="column is-2">
+          <div class="column is-1">
             <a href="/profile"
-            <div class="content indexProfile">
+            <div class="content indexProfile" style="margin-right: 100px;">
               <p class="title is-3"></p>
               <img class="hoverBorder" id="circlePic" src="<%= locals.currentUser.picture %>" alt="#">
               <br>
@@ -73,7 +73,6 @@
             </a>
           </div>
         <% } %>
-
 
       </div>
     </div>

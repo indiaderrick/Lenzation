@@ -1,31 +1,36 @@
 
 <div class="columns is-multiline">
-  <div class="column is-12-desktop">
-    <img class="image is-128x128 is-rounded" id="circlePic" src="<%= locals.currentUser.picture %>" alt="picture">
+  <div class="column is-12-desktop has-text-centered">
+    <br>
+    <figure id="circlePic">
+      <img class="image is-horizontal-center is-128x128 is-rounded" id="circlePic" src="<%= locals.currentUser.picture %>" alt="picture">
+    </figure>
   </div>
-      <p class="has-text-centered"> @ <%= locals.currentUser.username %></p>
-      
 
-    <div class="column is-6-desktop">
-      <br>
-      <br>
-      <br>
+  <div class="column is-12-desktop">
+    <p class="has-text-centered"> @ <%= locals.currentUser.username %></p>
+  </div>
 
-        <h1>Posts I have added </h1>
-        <% addedPosts.forEach(post => { %>
-          <div class="is-3-desktop">
-            <a href="/posts/<%= post.id %>"><img class=" image is-128x128" src="<%= post.image %>" alt=":("></a>
-          </div>
-          <% }) %>
+  <div class="column is-12-desktop">
+    <footer class="card-footer">
+      <a href="#" class="card-footer-item"><p style="color: black;">Posts: 266</p></a>
+      <a href="#" class="card-footer-item"><p style="color: black;">Followers: 879</p></a>
+      <a href="#" class="card-footer-item"><p style="color: black;">Following: 675</p></a>
+    </footer>
+  </div>
 
-          <br>
-          <br>
-          <button href="/profile/edit" class="button is-primary">Edit Profile</button>
-          <div class="column is-1">
-            <div class="control column is-2-desktop">
-              <br>
-              <a href="/posts"<button class="button"><i class="fas fa-arrow-left"></i></button></a>
-            </div>
+  <div class="column is-12-desktop">
+    <div class="columns is-multiline">
+      <% addedPosts.forEach(post => { %>
+        <div class="column is-4-desktop">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="/posts/<%= post.id %>"><img src="<%= post.image %>" alt=":("></a>
+            </figure>
           </div>
         </div>
+        <% }) %>
       </div>
+    </div>
+
+  </div>

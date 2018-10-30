@@ -79,6 +79,7 @@ nav, header {
 }
 #circlePic{
   border-radius: 50%;
+  margin: 0 auto;
 }
 .indexProfile{
   position: fixed;
@@ -90,4 +91,7 @@ nav, header {
 }
 .fab, .fas {
   font-size: 14px;
+}
+.is-horizontal-center {
+  justify-content: center;
 }
