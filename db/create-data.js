@@ -8,13 +8,13 @@ Post.collection.drop();
 User.collection.drop();
 
 const userData = [{
-  picture: 'asvajb',
+  picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_Tb_jM_HhDVa6MyL6Vyfmmnl0vau1CFyxdLr4cqoYGSFR1ZP0Xw',
   username: 'india',
   email: 'i@i.com',
   password: 'i'
 },
 {
-  picture: 'sdjhcvadjc',
+  picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQouiW0pAGzGrXme_LSZOBp_Emzz2SpltA34jC7Hie4YlP7CG34',
   username: 'matt',
   email: 'm@m.com',
   password: 'm'
@@ -41,7 +41,7 @@ User
       },
       {
         addedBy: users[1],
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMu8fC9f28oP8C0gD2j7jd8DBy9_Ru96x-lmLv-Grs-FvL_AC2Og',
+        image: 'https://cdn.theatlantic.com/assets/media/img/photo/2017/11/2017-national-geographic-nature-pho/n01_51110811034491/main_900.jpg?1509647373',
         caption: 'Cow grazing',
         date: 160894,
         location: 'Suffolk'

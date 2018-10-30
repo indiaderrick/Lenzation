@@ -9,7 +9,7 @@ const router = require('express').Router();
 router.get('/', postController.homeRoute);
 
 // PROFILE ROUTE:
-router.get('/profile', userController.profileRoute);
+router.get('/users/:userId', userController.profileRoute);
 
 //ABOUT ROUTE:
 router.get('/about', postController.aboutRoute);

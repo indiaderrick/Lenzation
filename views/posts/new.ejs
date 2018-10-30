@@ -3,8 +3,8 @@
   <form class="column is-8-desktop" action="/posts" method="post">
 
     <div class="field column is-8-desktop">
-      <label class="label" for="username"> Photo creds go to: </label>
-      <div class="control has-icons-left has-icons-right">
+      <label class="label" for="username" hidden> <%= locals.currentUser.username %>, upload a photo: </label>
+      <div class="control has-icons-left has-icons-right" hidden>
         <input class="input is-success" name='addedBy' value='<%= locals.currentUser._id %>' hidden/>
         <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
@@ -13,7 +13,6 @@
           <i class="fas fa-check"></i>
         </span>
       </div>
-      <p class="help is-success">This username is available</p>
     </div>
 
     <div class="field column is-8-desktop">

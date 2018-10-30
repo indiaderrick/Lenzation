@@ -11,8 +11,9 @@ function aboutRoute(req, res) {
 function indexRoute (req, res) {
   Post
     .find()
-    .populate('addedBy')
+    .populate('addedBy comments.user')
     .then(function(result){
+      console.log(result);
       const postObject = {
         posts: result
       };
@@ -33,8 +34,9 @@ function createRoute(req, res) {
 function showRoute(req, res) {
   Post
     .findById(req.params.id)
-    .populate('addedBy')
+    .populate('comments.user addedBy')
     .then(post => {
+      console.log(post);
       res.render('posts/show', post);
     });
 }

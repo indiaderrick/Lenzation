@@ -31,7 +31,7 @@
                   <div class="media">
                     <div class="media-left">
                       <figure class="image is-48x48">
-                        <img src="#" alt="#">
+                        <img src="<%= post.addedBy.picture %>" alt="#">
                       </figure>
                     </div>
                     <div class="media-content">
@@ -50,7 +50,7 @@
                     <time><%= post.time %></time>
                   </div>
                   <footer class="card-footer">
-                    <a href="#" class="card-footer-item">Save</a>
+                    <a href="#" class="card-footer-item">View profile</a>
                     <a href="#" class="card-footer-item">Edit</a>
                     <a href="#" class="card-footer-item">Delete</a>
                   </footer>
@@ -60,17 +60,20 @@
             <% }) %>
           </div>
         </div>
-
-        <div class="column is-2">
-          <a href="/profile"
-          <div class="content indexProfile">
-            <p class="title is-3"></p>
-            <img class="hoverBorder" src="#" alt="#">
-            <i class="far fa-user"></i>
-            <p style="display: inline-block;"> 276 </p>
+        <% if(locals.isLoggedIn) { %>
+          <div class="column is-2">
+            <a href="/profile"
+            <div class="content indexProfile">
+              <p class="title is-3"></p>
+              <img class="hoverBorder" id="circlePic" src="<%= locals.currentUser.picture %>" alt="#">
+              <br>
+              <i class="far fa-user"></i>
+              <p style="display: inline-block;"> 276 </p>
+            </div>
+            </a>
           </div>
-          </a>
-        </div>
+        <% } %>
+
 
       </div>
     </div>

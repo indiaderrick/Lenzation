@@ -7,11 +7,17 @@ const userSchema = mongoose.Schema({
   password: String
 });
 
-// const virtual = userSchema.virtual('comments',{
-//   ref: 'Post',
-//   localField: 'id',
-//   foreignField: 'comments.username'
-// });
+userSchema.virtual('comments', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'comments.user'
+});
+
+userSchema.virtual('addedPosts', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'addedBy'
+});
 
 
 const userModel = mongoose.model('User', userSchema);

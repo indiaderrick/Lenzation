@@ -11,7 +11,7 @@ const postSchema = mongoose.Schema({
   location: String,
   comments: [{
     content: String,
-    username: String
+    user: { type: mongoose.Schema.ObjectId, ref: 'User' }
   }
   ]
 });

@@ -34,11 +34,11 @@ nav, header {
   font-family: 'Roboto Mono';
 }
 .has-text-centered{
-  font-family: 'Roboto Mono';
+  font-family: 'Roboto Mono', monospace;
   font-size: 25px;
 }
 .content {
-  font-family: 'Roboto Mono';
+  font-family: 'Roboto Mono', monospace;
   position: relative;
 }
 .logo:hover {
@@ -47,13 +47,17 @@ nav, header {
 .showTitle {
   border-top: 20px;
 }
+.showPageTitle{
+  font-size: 25px;
+  font-family: 'Roboto Mono', monospace ;
+}
 
 .caption{
   border-bottom: 1px solid grey;
 }
 .navItem {
   color: black;
-  font-family: 'Roboto Mono';
+  font-family: 'Roboto Mono', monospace ;
 }
 .navbar-menu {
   height: 100%;
@@ -71,7 +75,6 @@ nav, header {
   background-color: black;
 }
 .commentsSection {
-  box-shadow: 0 0 50px silver;
   padding: 5px;
 }
 #circlePic{
