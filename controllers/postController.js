@@ -9,7 +9,9 @@ function aboutRoute(req, res) {
 }
 
 function indexRoute (req, res) {
-  Post.find()
+  Post
+    .find()
+    .populate('addedBy')
     .then(function(result){
       const postObject = {
         posts: result
@@ -17,36 +19,45 @@ function indexRoute (req, res) {
       res.render('posts/index', postObject);
     });
 }
+
 function newRoute(req, res) {
   res.render('posts/new');
 }
 
 function createRoute(req, res) {
-  Post.create(req.body)
-    .populate('username')
+  Post
+    .create(req.body)
     .then(result => res.redirect(`/posts/${result._id}`));
 }
 
 function showRoute(req, res) {
-  Post.findById(req.params.id)
+  Post
+    .findById(req.params.id)
+    .populate('addedBy')
     .then(post => {
-      res.render('posts/show', post)
+      res.render('posts/show', post);
     });
 }
+
 function editRoute(req, res) {
-  Post.findById(req.params.id)
+  Post
+    .findById(req.params.id)
     .then(post => {
       res.render('posts/edit', post);
     });
 }
+
 function updateRoute(req, res) {
-  Post.findByIdAndUpdate(req.params.id, req.body)
+  Post
+    .findByIdAndUpdate(req.params.id, req.body)
     .then(post => {
-      res.redirect(`/posts/${post._id}`)
+      res.redirect(`/posts/${post._id}`);
     });
 }
+
 function deleteRoute(req, res) {
-  Post.findByIdAndDelete(req.params.id)
+  Post
+    .findByIdAndDelete(req.params.id)
     .then(() => res.redirect('/posts'));
 }
 

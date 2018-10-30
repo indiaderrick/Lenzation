@@ -24,7 +24,7 @@
               <a href="/posts/<%= post.id %>" class="imageShadow">
                 <div class="card-image">
                   <figure class="image is-4by3">
-                    <img src="<%= post.image %>" alt="Placeholder image">
+                    <img class="indexImg"src="<%= post.image %>" alt="Placeholder image">
                   </figure>
                 </div>
                 <div class="card-content">
@@ -38,11 +38,11 @@
                       <i class="far fa-heart"></i>
                       <i class="far fa-comment"></i>
                       <i class="fas fa-map-marker-alt"></i>
-                      <span><p class="title is-4"> <%= post.username %></p></span>
+                      <span><p class="title is-4"> <%= post.addedBy.username %></p></span>
                     </div>
                   </div>
                   <div>
-                    <p>Caption ..... <a>@<%= post.username %></a>.</p>
+                    <p>Caption ..... <a>@<%= post.caption %></a>.</p>
                     <a href="#">#Lenzation</a>
                     <br>
                     <i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i><p style="display: inline-block;"> <%= post.location %> </p>
@@ -65,7 +65,7 @@
           <a href="/profile"
           <div class="content indexProfile">
             <p class="title is-3"></p>
-            <img class="hoverBorder" src="" alt="#">
+            <img class="hoverBorder" src="#" alt="#">
             <i class="far fa-user"></i>
             <p style="display: inline-block;"> 276 </p>
           </div>

@@ -5,7 +5,7 @@
     <div class="field column is-8-desktop">
       <label class="label" for="username"> Photo creds go to: </label>
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-success" name='username' value='<%= locals.currentUser.username%>'/>
+        <input class="input is-success" name='addedBy' value='<%= locals.currentUser._id %>' hidden/>
         <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
         </span>
