@@ -1,5 +1,6 @@
 <br>
 <div class="columns is-multiline">
+
   <div class="column is-12-desktop">
     <% if(locals.isLoggedIn) { %>
       <h2 class="has-text-centered"> Welcome back <%= locals.currentUser.username %> </h2>
@@ -15,24 +16,61 @@
       <div class="column is-1-desktop">
 
       </div>
-      <div class="column is-10-desktop">
+      <div class="column is-8-desktop">
 
         <div class="columns is-multiline">
           <% posts.forEach(post => { %>
-            <div class="column is-3">
-              <figure class="image is-square">
-                <a href="/posts/<%= post.id %>" class="imageShadow">
-                  <div class="blackBackground">
-                    <img src=<%= post.image %> alt=<%= post.username%>>
+            <div class="card column is-8">
+              <a href="/posts/<%= post.id %>" class="imageShadow">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="<%= post.image %>" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="#" alt="#">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <i class="far fa-heart"></i>
+                      <i class="far fa-comment"></i>
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span><p class="title is-4"> <%= post.username %></p></span>
+                    </div>
                   </div>
-              </figure>
-                <br>
-                <p style="text-decoration: none; color: black; font-weight: bold;"> <%= post.username %>: </p>
-                <p style="text-decoration: none; color: black" class="caption">  <%= post.caption %> </p>
+                  <div>
+                    <p>Caption ..... <a>@<%= post.username %></a>.</p>
+                    <a href="#">#Lenzation</a>
+                    <br>
+                    <i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i><p style="display: inline-block;"> <%= post.location %> </p>
+                      <br>
+                    <time><%= post.time %></time>
+                  </div>
+                  <footer class="card-footer">
+                    <a href="#" class="card-footer-item">Save</a>
+                    <a href="#" class="card-footer-item">Edit</a>
+                    <a href="#" class="card-footer-item">Delete</a>
+                  </footer>
+                </div>
               </a>
             </div>
             <% }) %>
+          </div>
         </div>
+
+        <div class="column is-2">
+          <a href="/profile"
+          <div class="content indexProfile">
+            <p class="title is-3"></p>
+            <img class="hoverBorder" src="" alt="#">
+            <i class="far fa-user"></i>
+            <p style="display: inline-block;"> 276 </p>
+          </div>
+          </a>
         </div>
+
       </div>
     </div>

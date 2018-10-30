@@ -27,6 +27,7 @@ nav, header {
   background-color: white;
   z-index: +1;
 }
+
 .logo {
   font-size: 25px;
   color: black;
@@ -75,4 +76,15 @@ img:hover {
 }
 #circlePic{
   border-radius: 50%;
+}
+.indexProfile{
+  position: fixed;
+  /* margin-bottom: 150px; */
+}
+.hoverBorder:hover {
+  border: 1px solid black;
+  opacity: 1;
+}
+.fab, .fas {
+  font-size: 14px;
 }

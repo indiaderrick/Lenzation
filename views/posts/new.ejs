@@ -1,13 +1,11 @@
 <div class="columns is-multiline">
-  <div class="column is-2-desktop">
+<div class="column is-11">
+  <form class="column is-8-desktop" action="/posts" method="post">
 
-  </div>
-  <form class="column is-6-desktop" action="/posts" method="post">
-
-    <div class="field column is-6-desktop">
+    <div class="field column is-8-desktop">
       <label class="label" for="username"> Photo creds go to: </label>
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-success" name='username' value='<%= locals.currentUser.username %>' />
+        <input class="input is-success" name='username' value='<%= locals.currentUser.username%>'/>
         <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
         </span>
@@ -18,7 +16,7 @@
       <p class="help is-success">This username is available</p>
     </div>
 
-    <div class="field column is-6-desktop">
+    <div class="field column is-8-desktop">
       <label class="label" for="image">Photo URL:</label>
       <div class="control has-icons-left has-icons-right">
         <input class="input is-success" type="text" name="image">
@@ -31,14 +29,13 @@
       </div>
     </div>
 
-    
 
-    <div class="field column is-6-desktop">
+    <div class="field column is-8-desktop">
       <label class="label" for="location">Where was this taken?</label>
       <div class="control has-icons-left has-icons-right">
         <input class="input is-success" type="text" name="location">
         <span class="icon is-small is-left">
-          <i class="fas fa-home"></i>
+          <i class="fas fa-map-marker-alt"></i>
         </span>
         <span class="icon is-small is-right">
           <i class="fas fa-check"></i>
@@ -46,23 +43,21 @@
       </div>
     </div>
 
-    <div class="field column is-6-desktop">
-      <div class="control has-icons-left has-icons-right">
-        <input class="input is-success" type="text" name="like" value="❤︎">
-        <span class="icon is-small is-right">
-          <i class="fas fa-check"></i>
-        </span>
-      </div>
-    </div>
-
-    <div class="field column is-6-desktop">
+    <div class="field column is-8-desktop">
       <label class="label" for="caption">Add a caption:</label>
       <div class="control">
         <textarea class="textarea" name="caption"></textarea>
       </div>
     </div>
     <div class="control column is-6-desktop">
-      <button class="button is-link" >Upload image 📷</button>
+      <button class="button is-primary" >Upload image 📷</button>
     </div>
   </form>
+</div>
+  <div class="column is-1">
+    <div class="control column is-2-desktop">
+      <br>
+      <a href="/posts"<button class="button"><i class="fas fa-arrow-left"></i></button></a>
+    </div>
+  </div>
 </div>

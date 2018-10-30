@@ -23,6 +23,7 @@ function newRoute(req, res) {
 
 function createRoute(req, res) {
   Post.create(req.body)
+    .populate('username')
     .then(result => res.redirect(`/posts/${result._id}`));
 }
 
