@@ -26,57 +26,58 @@
                     <img class="indexImg"src="<%= post.image %>" alt="Placeholder image">
                   </figure>
                 </div>
-                  </a>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="<%= post.addedBy.picture %>" alt="#">
-                        <p>Likes : <%= post.like.length %></p>
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                        <% if(locals.isLoggedIn) { %>
-                          <% if(!post.like.filter(id => id.toString() === locals.currentUser._id.toString()).length) { %>
-                            <form action='/posts/<%= post._id %>/like/<%= locals.currentUser._id %>' method='POST'>
-                              <button class="button is-rounded"> LIKE </button>
-                              </form>
-                              <% } else { %>
-                                <p>LIKED!!!!!</p>
-                              <% } %>
-                              <%  } %>
-                      <a href="/pages/<%= post.addedBy.id %>" id="anchor"><p class="title is-4"> <%= post.addedBy.username %></p></a>
-                    </div>
+              </a>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img src="<%= post.addedBy.picture %>" alt="#">
+                    </figure>
                   </div>
-                  <div>
-                    <a>@<%= post.caption %></a>
-                    <a href="#"><p style="color: black;">#Lenzation</p></a>
-                    <br>
-                    <i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i><p style="display: inline-block;"> <%= post.location %> </p>
-                      <br>
-                    <time><%= post.time %></time>
+                  <div class="media-content">
+                    <% if(locals.isLoggedIn) { %>
+                      <% if(!post.like.filter(id => id.toString() === locals.currentUser._id.toString()).length) { %>
+                        <form action='/posts/<%= post._id %>/like/<%= locals.currentUser._id %>' method='POST'>
+                          <button> <i class="far fa-heart"></i><%= post.like.length %> </button>
+                        </form>
+                        <% } else { %>
+                          <p><i class="fas fa-heart"><%= post.like.length %></i></p>
+                          <% } %>
+                          <%  }  else { %>
+                            <p>Likes : <%= post.like.length %></p>
+                            <%  }%>
+                            <a href="/pages/<%= post.addedBy.id %>" id="anchor"><p class="title is-4"> <%= post.addedBy.username %></p></a>
+                          </div>
+                        </div>
+                        <div>
+                          <a>@<%= post.caption %></a>
+                          <a href="#"><p style="color: black;">#Lenzation</p></a>
+                          <br>
+                          <i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i><p style="display: inline-block;"> <%= post.location %> </p>
+                          <br>
+                          <time><%= post.time %></time>
+                        </div>
+                        <footer class="card-footer">
+                          <a href="/pages/<%= post.addedBy.id %>" class="card-footer-item"><p style="color: black;">View profile</p></a>
+                          <a href="#" class="card-footer-item"><p style="color: black;">Edit</p></a>
+                          <a href="#" class="card-footer-item"><p style="color: black;">Delete</p></a>
+                        </footer>
+                      </div>
+                    </div>
+                    <% }) %>
                   </div>
-                  <footer class="card-footer">
-                    <a href="/pages/<%= post.addedBy.id %>" class="card-footer-item"><p style="color: black;">View profile</p></a>
-                    <a href="#" class="card-footer-item"><p style="color: black;">Edit</p></a>
-                    <a href="#" class="card-footer-item"><p style="color: black;">Delete</p></a>
-                  </footer>
                 </div>
-            </div>
-            <% }) %>
-          </div>
-        </div>
-        <% if(locals.isLoggedIn) { %>
-          <div class="column is-1">
-            <a href="/pages/<%= locals.currentUser._id %>"
-            <div class="content indexProfile" style="margin-right: 100px;">
-              <p class="title is-3"></p>
-              <img  class="hoverBorder" id="circlePic" src="<%= locals.currentUser.picture %>" alt="#">
-              <br>
-              <p style="display: inline-block; color: black;"> Followers: <%= locals.currentUser.numberOfFollowers %> </p>
-            </div>
-            </a>
-          </div>
+                <% if(locals.isLoggedIn) { %>
+                  <div class="column is-1">
+                    <a href="/pages/<%= locals.currentUser._id %>"
+                      <div class="content indexProfile" style="margin-right: 100px;">
+                        <p class="title is-3"></p>
+                        <img  class="hoverBorder" id="circlePic" src="<%= locals.currentUser.picture %>" alt="#">
+                        <br>
+                        <p style="display: inline-block; color: black;"> Followers: <%= locals.currentUser.numberOfFollowers %> </p>
+                      </div>
+                    </a>
+                  </div>
         <% } %>
 
       </div>
