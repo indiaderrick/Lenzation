@@ -63,6 +63,22 @@ function deleteRoute(req, res) {
     .then(() => res.redirect('/posts'));
 }
 
+function like(req, res, next) {
+  console.log('we are in like!');
+  Post
+    .findById(req.params.postId)
+    .then(post => {
+      post.like.push(req.params.currentUserId);
+      post.save();
+      console.log(post);
+      res.redirect('/posts');
+    })
+    .catch(err => {
+      console.log(err);
+      next();
+    });
+}
+
 module.exports = {
   homeRoute: homeRoute,
   aboutRoute: aboutRoute,
@@ -72,5 +88,6 @@ module.exports = {
   newRoute: newRoute,
   editRoute: editRoute,
   updateRoute: updateRoute,
-  deleteRoute: deleteRoute
+  deleteRoute: deleteRoute,
+  like: like
 };

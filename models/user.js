@@ -25,6 +25,11 @@ userSchema.virtual('numberOfFollowers')
     return this.followers.length;
   });
 
+userSchema.virtual('numberOfLikes')
+  .get(function() {
+    return this.likes.length;
+  });
+
 userSchema.virtual('following', {
   ref: 'User',
   localField: '_id',

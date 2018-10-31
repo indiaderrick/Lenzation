@@ -95,3 +95,6 @@ nav, header {
 .is-horizontal-center {
   justify-content: center;
 }
+#anchor {
+  color: black !important;
+}

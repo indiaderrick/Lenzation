@@ -3,13 +3,12 @@
 
   <div class="column is-12-desktop">
     <% if(locals.isLoggedIn) { %>
-      <h2 class="has-text-centered"> Welcome back <%= locals.currentUser.username %> </h2>
+      <h2 class="has-text-centered"> Welcome back <%= locals.currentUser.username.toUpperCase() %> </h2>
       <% } else { %>
         <h1 class="has-text-centered title is-2"> BROWSE PHOTOS BELOW </h1>
         <% } %>
         <br>
         <span><a href="/posts/new"><button class="button is-focused"> Upload a new photo</button></a></span>
-        <span class="content">Library count: <%= posts.length %> posts so far!</span>
         <hr>
       </div>
       <br>
@@ -33,15 +32,24 @@
                     <div class="media-left">
                       <figure class="image is-48x48">
                         <img src="<%= post.addedBy.picture %>" alt="#">
+                        <p>Likes : <%= post.like.length %></p>
                       </figure>
                     </div>
                     <div class="media-content">
-                      <p><i class="far fa-heart"></i><p>
-                      <a href="/pages/<%= post.addedBy.id %>"><p class="title is-4"> <%= post.addedBy.username %></p></a>
+                        <% if(locals.isLoggedIn) { %>
+                          <% if(!post.like.filter(id => id.toString() === locals.currentUser._id.toString()).length) { %>
+                            <form action='/posts/<%= post._id %>/like/<%= locals.currentUser._id %>' method='POST'>
+                              <button class="button is-rounded"> LIKE </button>
+                              </form>
+                              <% } else { %>
+                                <p>LIKED!!!!!</p>
+                              <% } %>
+                              <%  } %>
+                      <a href="/pages/<%= post.addedBy.id %>" id="anchor"><p class="title is-4"> <%= post.addedBy.username %></p></a>
                     </div>
                   </div>
                   <div>
-                    <p>Caption ..... <a>@<%= post.caption %></a>.</p>
+                    <a>@<%= post.caption %></a>
                     <a href="#"><p style="color: black;">#Lenzation</p></a>
                     <br>
                     <i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i><p style="display: inline-block;"> <%= post.location %> </p>
@@ -49,7 +57,7 @@
                     <time><%= post.time %></time>
                   </div>
                   <footer class="card-footer">
-                    <a href="#" class="card-footer-item"><p style="color: black;">View profile</p></a>
+                    <a href="/pages/<%= post.addedBy.id %>" class="card-footer-item"><p style="color: black;">View profile</p></a>
                     <a href="#" class="card-footer-item"><p style="color: black;">Edit</p></a>
                     <a href="#" class="card-footer-item"><p style="color: black;">Delete</p></a>
                   </footer>

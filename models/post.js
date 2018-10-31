@@ -7,7 +7,7 @@ const postSchema = mongoose.Schema({
   image: String,
   caption: String,
   time: { type: Date, default: Date.now },
-  like: String,
+  like: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
   location: String,
   comments: [{
     content: String,

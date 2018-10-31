@@ -58,5 +58,8 @@ router.delete('/posts/:id', secureRoute, postController.deleteRoute);
 //FOLLOW ROUTE
 router.post('/user/:userId/follow/:currentUserId', secureRoute, userController.follow);
 
+//LIKES ROUTE:
+router.post('/posts/:postId/like/:currentUserId', secureRoute, postController.like);
+
 
 module.exports = router;
