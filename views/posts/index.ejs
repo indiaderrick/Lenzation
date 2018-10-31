@@ -36,9 +36,7 @@
                       </figure>
                     </div>
                     <div class="media-content">
-                      <i class="far fa-heart"></i>
-                      <i class="far fa-comment"></i>
-                      <i class="fas fa-map-marker-alt"></i>
+                      <p><i class="far fa-heart"></i><p>
                       <a href="/pages/<%= post.addedBy.id %>"><p class="title is-4"> <%= post.addedBy.username %></p></a>
                     </div>
                   </div>
@@ -65,10 +63,9 @@
             <a href="/pages/<%= locals.currentUser._id %>"
             <div class="content indexProfile" style="margin-right: 100px;">
               <p class="title is-3"></p>
-              <img class="hoverBorder" id="circlePic" src="<%= locals.currentUser.picture %>" alt="#">
+              <img  class="hoverBorder" id="circlePic" src="<%= locals.currentUser.picture %>" alt="#">
               <br>
-              <i class="far fa-user"></i>
-              <p style="display: inline-block;"> 276 </p>
+              <p style="display: inline-block; color: black;"> Followers: <%= locals.currentUser.numberOfFollowers %> </p>
             </div>
             </a>
           </div>
