@@ -3,19 +3,28 @@
   <div class="column is-12-desktop has-text-centered">
     <br>
     <figure id="circlePic">
-      <img class="image is-horizontal-center is-128x128 is-rounded" id="circlePic" src="<%= locals.currentUser.picture %>" alt="picture">
+      <img class="image is-horizontal-center is-128x128 is-rounded" id="circlePic" src="<%= picture %>" alt="picture">
     </figure>
   </div>
 
   <div class="column is-12-desktop">
-    <p class="has-text-centered"> @ <%= locals.currentUser.username %></p>
+    <p class="has-text-centered"> @<%= username %></p>
+  </div>
+  <div class="column is-12-desktop has-text-centered">
+    <% if(locals.isLoggedIn) { %>
+      <% if(locals.currentUser.username !== username && !followers.filter(id => id.toString() === locals.currentUser._id.toString()).length) { %>
+        <form style="display: inline-block" action='/user/<%= _id %>/follow/<%= locals.currentUser._id %>' method='POST'>
+          <button class="button is-rounded">Follow</button>
+        </form>
+       <% } %>
+  <%  } %>
   </div>
 
   <div class="column is-12-desktop">
     <footer class="card-footer">
       <a href="#" class="card-footer-item"><p style="color: black;">Posts: 266</p></a>
-      <a href="#" class="card-footer-item"><p style="color: black;">Followers: 879</p></a>
-      <a href="#" class="card-footer-item"><p style="color: black;">Following: 675</p></a>
+      <a href="#" class="card-footer-item"><p style="color: black;">Followers: <%= numberOfFollowers %></p></a>
+      <a href="#" class="card-footer-item"><p style="color: black;">Following: <%= following.length %></p></a>
     </footer>
   </div>
 

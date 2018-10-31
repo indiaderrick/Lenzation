@@ -27,6 +27,7 @@
                     <img class="indexImg"src="<%= post.image %>" alt="Placeholder image">
                   </figure>
                 </div>
+                  </a>
                 <div class="card-content">
                   <div class="media">
                     <div class="media-left">
@@ -38,31 +39,30 @@
                       <i class="far fa-heart"></i>
                       <i class="far fa-comment"></i>
                       <i class="fas fa-map-marker-alt"></i>
-                      <span><p class="title is-4"> <%= post.addedBy.username %></p></span>
+                      <a href="/pages/<%= post.addedBy.id %>"><p class="title is-4"> <%= post.addedBy.username %></p></a>
                     </div>
                   </div>
                   <div>
                     <p>Caption ..... <a>@<%= post.caption %></a>.</p>
-                    <a href="#">#Lenzation</a>
+                    <a href="#"><p style="color: black;">#Lenzation</p></a>
                     <br>
                     <i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i><p style="display: inline-block;"> <%= post.location %> </p>
                       <br>
                     <time><%= post.time %></time>
                   </div>
                   <footer class="card-footer">
-                    <a href="#" class="card-footer-item">View profile</a>
-                    <a href="#" class="card-footer-item">Edit</a>
-                    <a href="#" class="card-footer-item">Delete</a>
+                    <a href="#" class="card-footer-item"><p style="color: black;">View profile</p></a>
+                    <a href="#" class="card-footer-item"><p style="color: black;">Edit</p></a>
+                    <a href="#" class="card-footer-item"><p style="color: black;">Delete</p></a>
                   </footer>
                 </div>
-              </a>
             </div>
             <% }) %>
           </div>
         </div>
         <% if(locals.isLoggedIn) { %>
           <div class="column is-1">
-            <a href="/profile"
+            <a href="/pages/<%= locals.currentUser._id %>"
             <div class="content indexProfile" style="margin-right: 100px;">
               <p class="title is-3"></p>
               <img class="hoverBorder" id="circlePic" src="<%= locals.currentUser.picture %>" alt="#">

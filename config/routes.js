@@ -9,7 +9,7 @@ const router = require('express').Router();
 router.get('/', postController.homeRoute);
 
 // PROFILE ROUTE:
-router.get('/users/:userId', userController.profileRoute);
+router.get('/pages/:userId', userController.profileRoute);
 
 //ABOUT ROUTE:
 router.get('/about', postController.aboutRoute);
@@ -54,6 +54,9 @@ router.put('/posts/:id', secureRoute, postController.updateRoute);
 
 //DELETE ROUTE:
 router.delete('/posts/:id', secureRoute, postController.deleteRoute);
+
+//FOLLOW ROUTE
+router.post('/user/:userId/follow/:currentUserId', secureRoute, userController.follow);
 
 
 module.exports = router;

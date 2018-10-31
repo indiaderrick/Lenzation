@@ -4,7 +4,8 @@ const userSchema = mongoose.Schema({
   picture: String,
   username: String,
   email: { type: String, unique: true },
-  password: String
+  password: String,
+  followers: [ { type: mongoose.Schema.ObjectId, ref: 'User' }]
 });
 
 userSchema.virtual('comments', {
@@ -17,6 +18,21 @@ userSchema.virtual('addedPosts', {
   ref: 'Post',
   localField: '_id',
   foreignField: 'addedBy'
+});
+
+userSchema.virtual('numberOfFollowers')
+  .get(function() {
+    return this.followers.length;
+  });
+
+userSchema.virtual('following', {
+  ref: 'User',
+  localField: '_id',
+  foreignField: 'followers'
+});
+
+userSchema.set('toJSON', {
+  virtuals: true
 });
 
 
