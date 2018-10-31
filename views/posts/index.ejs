@@ -38,10 +38,10 @@
                     <% if(locals.isLoggedIn) { %>
                       <% if(!post.like.filter(id => id.toString() === locals.currentUser._id.toString()).length) { %>
                         <form action='/posts/<%= post._id %>/like/<%= locals.currentUser._id %>' method='POST'>
-                          <button> <i class="far fa-heart"></i><%= post.like.length %> </button>
+                          <button class="button is-small"> <i class="far fa-heart"></i>|<%= post.like.length %> </button>
                         </form>
                         <% } else { %>
-                          <p><i class="fas fa-heart"><%= post.like.length %></i></p>
+                          <button  class="button is-small"><i class="fas fa-heart"></i><%= post.like.length %></button>
                           <% } %>
                           <%  }  else { %>
                             <p>Likes : <%= post.like.length %></p>
@@ -55,7 +55,7 @@
                           <br>
                           <i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i><p style="display: inline-block;"> <%= post.location %> </p>
                           <br>
-                          <time><%= post.time %></time>
+                          <time><%= post.time.toDateString() %></time>
                         </div>
                         <footer class="card-footer">
                           <a href="/pages/<%= post.addedBy.id %>" class="card-footer-item"><p style="color: black;">View profile</p></a>

@@ -98,3 +98,6 @@ nav, header {
 #anchor {
   color: black !important;
 }
+.heartButton {
+  font-size: 15px;
+}

@@ -4,8 +4,8 @@
     <h1 class="showPageTitle"> Photo creds: <%= addedBy.username.toUpperCase() %> </h1>
     <img src="<%= image %>">
     <h3> <span style="font-weight: bold">Caption:</span> <%= caption %> </h3>
-    <h4> <span style="font-weight: bold">Date taken:</span>  <%= time %> </h4>
-    <h4> <span style="font-weight: bold">Location:</span> <%= location %> <%= like %></h4>
+    <h4> <span style="font-weight: bold">Date taken:</span>  <%= time.toDateString() %> </h4>
+    <h4> <span style="font-weight: bold">Location:</span> <%= location %> </h4>
     <br>
     <% if (locals.isLoggedIn) { %>
       <form action="/posts/<%= _id%>?_method=DELETE" method="post">
@@ -27,7 +27,7 @@
             <div class="field">
               <label class="label" for='content'>Comments: </label>
               <div class="control has-icons-left has-icons-right">
-                <textarea name='content'></textarea>
+                <input class="textarea" rows='20' name='content'></input>
               </div>
             </div>
             <div class="control">

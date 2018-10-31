@@ -25,10 +25,10 @@ userSchema.virtual('numberOfFollowers')
     return this.followers.length;
   });
 
-userSchema.virtual('numberOfLikes')
-  .get(function() {
-    return this.likes.length;
-  });
+// userSchema.virtual('numberOfLikes')
+//   .get(function() {
+//     return this.like.length;
+//   });
 
 userSchema.virtual('following', {
   ref: 'User',
