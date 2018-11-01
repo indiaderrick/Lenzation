@@ -18,7 +18,11 @@
     /* border-bottom: 1px solid black; */
 }
 .helper{
-  min-height: 65vh;
+  min-height: 40vh;
+}
+
+.helper2{
+  min-height: 60vh;
 }
 
 nav, header {
