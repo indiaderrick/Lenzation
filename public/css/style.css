@@ -123,3 +123,10 @@ nav, header {
 #eachPost {
   margin-bottom: 20px;
 }
+#loggedIn {
+  color: magenta;
+  display: inline-block;
+}
+#inline {
+  display: inline-block;
+}

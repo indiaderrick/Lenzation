@@ -5,6 +5,7 @@ const userSchema = mongoose.Schema({
   username: String,
   email: { type: String, unique: true },
   password: String,
+  bio: String,
   followers: [ { type: mongoose.Schema.ObjectId, ref: 'User' }]
 });
 

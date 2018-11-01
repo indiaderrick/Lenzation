@@ -1,68 +1,71 @@
-<br>
-<h3 class="title is-3"> Update Profile ☞ </h3>
+<div class="columns is-multiline">
+  <div class="column is-11"><hr>
+    <h3 class="title is-3"> Update Profile ☞ </h3>
+    <form class="column is-6-desktop" action="/users/<%= _id %>?_method=PUT" method="post">
 
-<form class="column is-6-desktop" action="/register" method="post">
+      <div class="field">
+        <label class="label" for="make">Change profile picture?</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" name="picture" value="<%= picture %>">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
 
-  <div class="field">
-    <label class="label" for="make">Change profile picture?</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input is-success" type="text" name="picture">
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
-    </div>
+      <div>
+        <label class="label" for="make">Username:</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" name="username" value="<%= username %>">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="email">Email: </label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" name="email" value="<%= email %>">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field" >
+        <label class="label" for="bio">Update bio:</label>
+        <div class="control">
+          <input class="textarea" name="bio" value="<%= bio %>"></input>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="make">Password: </label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" name="password" value="<%= password %>">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="control">
+        <button class="button is-link">♕ Update profile now ♕ </button>
+      </div>
+    </form>
+
   </div>
-
-  <div>
-    <label class="label" for="make">Username:</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input is-success" type="text" name="username">
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label" for="email">Email: </label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input is-success" type="text" name="email">
-      <span class="icon is-small is-left">
-        <i class="fas fa-envelope"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
-    </div>
-  </div>
-
-  <div class="field column is-10-desktop" >
-    <label class="label" for="caption">Update bio:</label>
-    <div class="control">
-      <input class="textarea" name="caption"></input>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label" for="make">Password: </label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input is-success" type="text" name="password">
-      <span class="icon is-small is-left">
-        <i class="fas fa-lock"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
-    </div>
-  </div>
-
-  <div class="control">
-    <button class="button is-link">♕ Update profile now ♕ </button>
-  </div>
-</form>
+</div>

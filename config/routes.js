@@ -23,8 +23,12 @@ router.post('/register', authController.registerRoute);
 
 // // UPDATE USER ROUTE:
 // router.get('/profile/edit',  userController.editProfileRoute)
+
+//EDIT USER ROUTE:
+router.get('/users/:userId/edit', secureRoute, userController.editRoute);
+
 // UPDATE USER ROUTE:
-router.put('/posts/:id', secureRoute, postController.editRoute);
+router.put('/users/:userId', secureRoute, postController.updateRoute);
 
 // LOGIN ROUTE:
 router.get('/login', authController.loginFormRoute);

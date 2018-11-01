@@ -16,9 +16,23 @@ function profileRoute(req, res, next) {
     });
 }
 
+function editRoute(req, res){
+  User
+    .findById(req.params.userId)
+    .then(user => {
+      res.render('auth/updateProfile', user);
+    });
+}
+
+function updateRoute(req, res){
+  User
+    .findByIdAndUpdate(req.params.userId, req.body)
+    .then(user => {
+      res.redirect(`/users/${user._id}`)
+    });
+}
+
 function follow(req, res, next) {
-  // userId is the person whos page we are on
-  // currentUserId is the person who is logged in
   User
     .findById(req.params.userId)
     .then(user => {
@@ -48,7 +62,7 @@ function getFollowing(req, res){
 module.exports = {
   profileRoute: profileRoute,
   follow: follow,
-  getFollowing: getFollowing
+  getFollowing: getFollowing,
+  editRoute: editRoute,
+  updateRoute: updateRoute
 };
-
-//function, route, ejs

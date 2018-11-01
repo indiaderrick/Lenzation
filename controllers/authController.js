@@ -1,10 +1,10 @@
 const User = require('../models/user');
 
-
 //REGISTER FORM:
 function registerFormRoute(req, res){
   res.render('auth/register');
 }
+
 //REGISTER ROUTE:
 function registerRoute(req, res) {
   User.create(req.body)
@@ -13,10 +13,12 @@ function registerRoute(req, res) {
       res.redirect('/login');
     });
 }
+
 //LOGIN FORM:
 function loginFormRoute(req, res){
   res.render('auth/login');
 }
+
 //LOGIN ROUTE:
 function loginRoute(req, res){
   User.findOne({email: req.body.email})
@@ -29,6 +31,7 @@ function loginRoute(req, res){
       }
     });
 }
+
 // LOGOUT:
 function logoutRoute(req, res) {
   req.session.regenerate(function() {

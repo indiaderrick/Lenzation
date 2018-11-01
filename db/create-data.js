@@ -11,12 +11,14 @@ const userData = [{
   picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_Tb_jM_HhDVa6MyL6Vyfmmnl0vau1CFyxdLr4cqoYGSFR1ZP0Xw',
   username: 'india',
   email: 'i@i.com',
+  bio: 'Hello my name is india and i made this :)',
   password: 'i'
 },
 {
   picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQouiW0pAGzGrXme_LSZOBp_Emzz2SpltA34jC7Hie4YlP7CG34',
   username: 'matt',
   email: 'm@m.com',
+  bio: 'Hello my name is matt!',
   password: 'm'
 }];
 
