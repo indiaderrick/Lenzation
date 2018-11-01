@@ -1,5 +1,4 @@
-<br>
-<div class="columns is-multiline">
+<br><div class="columns is-multiline">
 
   <div class="column is-12-desktop">
     <% if(locals.isLoggedIn) { %>
@@ -8,18 +7,18 @@
         <h1 class="has-text-centered title is-2"> BROWSE PHOTOS BELOW </h1>
         <% } %>
         <br>
-        <span><a href="/posts/new"><button class="button is-focused"> Upload a new photo</button></a></span>
+        <% if(locals.isLoggedIn) { %>
+          <span><a href="/posts/new"><button class="button is-focused"> Upload a new photo</button></a></span>
+        <% } %>
         <hr>
       </div>
       <br>
-      <div class="column is-1-desktop">
 
-      </div>
+      <div class="column is-1-desktop"></div>
       <div class="column is-8-desktop">
-
         <div class="columns is-multiline">
           <% posts.forEach(post => { %>
-            <div class="card column is-8">
+            <div class="card column is-8" id="eachPost">
               <a href="/posts/<%= post.id %>" class="imageShadow">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -27,6 +26,7 @@
                   </figure>
                 </div>
               </a>
+
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
@@ -34,6 +34,7 @@
                       <img src="<%= post.addedBy.picture %>" alt="#">
                     </figure>
                   </div>
+
                   <div class="media-content">
                     <% if(locals.isLoggedIn) { %>
                       <% if(!post.like.filter(id => id.toString() === locals.currentUser._id.toString()).length) { %>
@@ -49,14 +50,15 @@
                             <a href="/pages/<%= post.addedBy.id %>" id="anchor"><p class="title is-4"> <%= post.addedBy.username %></p></a>
                           </div>
                         </div>
+
                         <div>
                           <a>@<%= post.caption %></a>
-                          <a href="#"><p style="color: black;">#Lenzation</p></a>
                           <br>
                           <i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i><p style="display: inline-block;"> <%= post.location %> </p>
                           <br>
                           <time><%= post.time.toDateString() %></time>
                         </div>
+
                         <footer class="card-footer">
                           <a href="/pages/<%= post.addedBy.id %>" class="card-footer-item"><p style="color: black;">View profile</p></a>
                           <a href="#" class="card-footer-item"><p style="color: black;">Edit</p></a>
@@ -67,18 +69,17 @@
                     <% }) %>
                   </div>
                 </div>
+
                 <% if(locals.isLoggedIn) { %>
                   <div class="column is-1">
                     <a href="/pages/<%= locals.currentUser._id %>"
                       <div class="content indexProfile" style="margin-right: 100px;">
                         <p class="title is-3"></p>
-                        <img  class="hoverBorder" id="circlePic" src="<%= locals.currentUser.picture %>" alt="#">
-                        <br>
+                        <img  class="hoverBorder" id="circlePic" src="<%= locals.currentUser.picture %>" alt="#"><br>
                         <p style="display: inline-block; color: black;"> Followers: <%= locals.currentUser.numberOfFollowers %> </p>
                       </div>
                     </a>
                   </div>
         <% } %>
-
       </div>
     </div>

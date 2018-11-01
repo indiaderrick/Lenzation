@@ -34,9 +34,21 @@ function follow(req, res, next) {
     });
 }
 
+function getFollowing(req, res){
+  User.
+    findById(req.params.userId)
+    .populate('following followers')
+    .then(user => {
+      console.log('-=-=->', user);
+      res.render('pages/following', user);
+    });
+}
+
+
 module.exports = {
   profileRoute: profileRoute,
-  follow: follow
+  follow: follow,
+  getFollowing: getFollowing
 };
 
 //function, route, ejs

@@ -1,0 +1,33 @@
+<div class="columns is-multiline">
+
+  <div class="column is-12-desktop"><br>
+    <h1 class="has-text-centered">@<%= username.toUpperCase() %>'s followers:</h1>
+    <hr>
+  </div>
+
+  <div class="column is-12-desktop">
+    <% if(locals.isLoggedIn) { %>
+      <% following.forEach(person => { %>
+        <div class="column is-12-desktop">
+          <span><img class="icon pink" src="<%= person.picture %>" alt=""></span>
+          <p style="color: black; display: inline-block" >@<%= person.username.toLowerCase() %></p>
+          <p style="color: black; display: inline-block" >, followers:<%= person.followers.length %></p>
+        </div>
+        <%  }) %>
+        <% } %>
+      </div>
+
+      <div class="column is-12-desktop">
+          <h1 class="has-text-centered">@<%= username.toUpperCase() %> follows:</h1>
+        <hr>
+        <% if(locals.isLoggedIn) { %>
+          <% followers.forEach(follower => { %>
+            <div class="column is-12-desktop">
+              <span><img class="icon royalblue" src="<%= follower.picture %>" alt=""></span>
+              <p style="color: black; display: inline-block" >@<%= follower.username.toLowerCase() %></p>
+              <p style="color: black; display: inline-block" >, followers:<%= follower.followers.length %></p>
+            </div>
+            <%  }) %>
+            <% } %>
+          </div>
+        </div>

@@ -11,6 +11,9 @@ router.get('/', postController.homeRoute);
 // PROFILE ROUTE:
 router.get('/pages/:userId', userController.profileRoute);
 
+//GET LIST OF FOLLOWING ROUTE:
+router.get('/user/:userId/following', secureRoute, userController.getFollowing);
+
 //ABOUT ROUTE:
 router.get('/about', postController.aboutRoute);
 
@@ -20,6 +23,8 @@ router.post('/register', authController.registerRoute);
 
 // // UPDATE USER ROUTE:
 // router.get('/profile/edit',  userController.editProfileRoute)
+// UPDATE USER ROUTE:
+router.put('/posts/:id', secureRoute, postController.editRoute);
 
 // LOGIN ROUTE:
 router.get('/login', authController.loginFormRoute);

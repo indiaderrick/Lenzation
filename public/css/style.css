@@ -101,3 +101,25 @@ nav, header {
 .heartButton {
   font-size: 15px;
 }
+.footerFont {
+  font-size: 14px;
+}
+.bold {
+  font-weight: 600;
+}
+#middle {
+  margin: 0 auto;
+}
+.pink{
+  border: 1px solid magenta;
+  border-radius: 50%;
+  display: inline-block !important;
+}
+.royalblue {
+  border: 1px solid royalblue;
+  border-radius: 50%;
+  display: inline-block !important;
+}
+#eachPost {
+  margin-bottom: 20px;
+}

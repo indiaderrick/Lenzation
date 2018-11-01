@@ -1,7 +1,14 @@
-
 <div class="columns is-multiline">
+
+  <div class="column is-2-desktop">
+    <br><a href="#"> <button class="button is-small"> Update Profile</button></a>
+  </div>
+  <div class="column is-8-desktop"></div>
+  <div class="column is-2-desktop">
+    <br><a href="/posts"> <button class="button is-small"> Back to Explore</button></a>
+  </div>
+
   <div class="column is-12-desktop has-text-centered">
-    <br>
     <figure id="circlePic">
       <img class="image is-horizontal-center is-128x128 is-rounded" id="circlePic" src="<%= picture %>" alt="picture">
     </figure>
@@ -10,50 +17,52 @@
   <div class="column is-12-desktop">
     <p class="has-text-centered"> @<%= username %></p>
   </div>
-  <div class="column is-12-desktop has-text-centered">
-    <% if(locals.currentUser.username === username) { %>
-      <span><a href="/posts/new"><button class="button is-focused "> Upload a new photo</button></a></span>
-      <% } %>
-  </div>
+
   <div class="column is-12-desktop has-text-centered">
     <% if(locals.isLoggedIn) { %>
-      <% if(locals.currentUser.username !== username && !followers.filter(id => id.toString() === locals.currentUser._id.toString()).length) { %>
-        <form style="display: inline-block" action='/user/<%= _id %>/follow/<%= locals.currentUser._id %>' method='POST'>
-          <button class="button is-rounded">Follow</button>
-        </form>
-       <% } %>
-  <%  } %>
-  </div>
-
-  <div class="column is-12-desktop">
-    <footer class="card-footer">
-      <a href="#" class="card-footer-item"><p style="color: black;">Posts: <%= addedPosts.length %></p></a>
-      <a href="#" class="card-footer-item"><p style="color: black;">Followers: <%= numberOfFollowers %></p></a>
-      <a href="#" class="card-footer-item"><p style="color: black;">Following: <%= following.length %></p></a>
-    </footer>
-  </div>
-
-  <div class="column is-12-desktop">
-    <div class="columns is-multiline">
-
-      <% if (addedPosts.length === 0){ %>
-        <div class="column is-12-desktop has-text-centered">
-          <br>
-          <p>No posts yet.</p>
-          <br>
-        </div>
-      <% } else { %>
-        <% addedPosts.forEach(post => { %>
-          <div class="column is-4-desktop">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <a href="/posts/<%= post.id %>"><img src="<%= post.image %>" alt=":("></a>
-              </figure>
-            </div>
-          </div>
-          <% }) %>
-    <%  }%>
+      <% if(locals.currentUser.username === username) { %>
+        <span><a href="/posts/new"><button class="button is-focused "> Upload a new photo</button></a></span>
+        <% } %>
+        <% } %>
       </div>
-    </div>
 
-  </div>
+      <div class="column is-12-desktop has-text-centered">
+        <% if(locals.isLoggedIn) { %>
+          <% if(locals.currentUser.username !== username && !followers.filter(id => id.toString() === locals.currentUser._id.toString()).length) { %>
+            <form style="display: inline-block" action='/user/<%= _id %>/follow/<%= locals.currentUser._id %>' method='POST'>
+              <button class="button is-rounded">Follow</button>
+            </form>
+            <% } %>
+            <%  } %>
+          </div>
+
+          <div class="column is-12-desktop">
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item"><p style="color: black;">Posts: <%= addedPosts.length %></p></a>
+              <a href="/user/<%= _id %>/following" class="card-footer-item"><p style="color: black;">Followers: <%= numberOfFollowers %></p></a>
+              <a  href="/user/<%= _id %>/following"class="card-footer-item"><p style="color: black;">Following:<%= following.length %></p></a>
+            </footer>
+          </div>
+
+          <div class="column is-12-desktop">
+            <div class="columns is-multiline">
+              <% if (addedPosts.length === 0){ %>
+                <div class="column is-12-desktop has-text-centered">
+                  <br>
+                  <p>No posts yet.</p>
+                  <br>
+                </div>
+                <% } else { %>
+                  <% addedPosts.forEach(post => { %>
+                    <div class="column is-4-desktop">
+                      <div class="card-image">
+                        <figure class="image is-4by3">
+                          <a href="/posts/<%= post.id %>"><img src="<%= post.image %>" alt=":("></a>
+                        </figure>
+                      </div>
+                    </div>
+                    <% }) %>
+                    <%  }%>
+                  </div>
+                </div>
+              </div>

@@ -1,9 +1,9 @@
-<div class="columns is-multiline">
-<div class="column is-11">
-  <form class="column is-8-desktop" action="/posts" method="post">
+<div class="columns">
+<div class="column is-11" >
 
-    <div class="field column is-8-desktop">
-      <label class="label" for="username" hidden> <%= locals.currentUser.username %>, upload a photo: </label>
+  <form class="column is-8-desktop" action="/posts" id="middle" method="post">
+    <div class="field column is-12-desktop">
+      <label class="label" for="username" hidden> <%= locals.currentUser.username.toUpperCase() %>, upload a photo: </label>
       <div class="control has-icons-left has-icons-right" hidden>
         <input class="input is-success" name='addedBy' value='<%= locals.currentUser._id %>' hidden/>
         <span class="icon is-small is-left">
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="field column is-8-desktop">
+    <div class="field column is-10-desktop">
       <label class="label" for="image">Photo URL:</label>
       <div class="control has-icons-left has-icons-right">
         <input class="input is-success" type="text" name="image">
@@ -29,7 +29,7 @@
     </div>
 
 
-    <div class="field column is-8-desktop">
+    <div class="field column is-10-desktop">
       <label class="label" for="location">Where was this taken?</label>
       <div class="control has-icons-left has-icons-right">
         <input class="input is-success" type="text" name="location">
@@ -42,21 +42,24 @@
       </div>
     </div>
 
-    <div class="field column is-8-desktop">
+    <div class="field column is-10-desktop" >
       <label class="label" for="caption">Add a caption:</label>
       <div class="control">
-        <textarea class="textarea" name="caption"></textarea>
+        <input class="textarea" name="caption"></input>
       </div>
     </div>
+
     <div class="control column is-6-desktop">
       <button class="button is-primary" >Upload image 📷</button>
     </div>
   </form>
 </div>
+
   <div class="column is-1">
-    <div class="control column is-2-desktop">
+    <div class="control column is-1-desktop">
       <br>
       <a href="/posts"<button class="button"><i class="fas fa-arrow-left"></i></button></a>
     </div>
   </div>
+  
 </div>
