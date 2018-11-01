@@ -18,6 +18,10 @@
     <p class="has-text-centered"> @<%= username %></p>
   </div>
 
+  <div class="column is-12-desktop has-text-centered" style="font-size: 14px;">
+    <p><%= bio %></p>
+  </div>
+
   <div class="column is-12-desktop has-text-centered">
     <% if(locals.isLoggedIn) { %>
       <% if(locals.currentUser.username === username) { %>

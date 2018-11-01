@@ -1,28 +1,70 @@
-<form class="" action="/posts/<%= _id %>?_method=PUT" method="post">
+<div class="columns is-multiline">
+  <div class="columns is-12-desktop">
+    <form class="" action="/posts/<%= _id %>?_method=PUT" method="post">
 
-  <div class="field">
-    <label for="username"> Photo creds go to: </label>
-    <input type="text" name="username" value="<%= addedBy %>">
-  </div>
+      <div class="field">
+        <label class="label" for="username"> Photo creds go to: </label>
+        <div class="control has-icons-left has-icons-right"hidden >
+          <input class="input is-success" type="text" name="username" value="<%= addedBy %>" hidden>
+        </div>
+      </div>
 
-  <div class="field">
-    <label for="image">Photo URL:</label>
-    <input type="text" name="image" value="<%= image %>">
-  </div>
+      <div class="field">
+        <label class="label" for="image">Photo URL:</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" name="image" value="<%= image %>">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
 
-  <div class="field">
-    <label for="time">Date uploaded:</label>
-    <input type="number" name="time" value="<%= time %>">
-  </div>
+      <div class="field">
+        <label class="label" for="time">Date uploaded:</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" name="time" value="<%= time %>">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
 
-  <div class="field">
-    <label for="location">Where was this taken? </label>
-    <input type="text" name="location" value="<%= location %>">
-  </div>
+      <div class="field">
+        <label class="label" for="location">Where was this taken?</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" name="location" value="<%= location %>">
+          <span class="icon is-small is-left">
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
 
-  <div class="field">
-    <label for="caption">Add a caption:</label>
-    <textarea name="caption"><%= caption %></textarea>
+      <div class="field">
+        <label class="label" for="caption">Add a caption:</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" name="caption" value="<%= caption %>">
+          <span class="icon is-small is-left">
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="control">
+        <button class="button is-link">Update image 📷 </button>
+      </div>
+      
+    </form>
   </div>
-  <button>Update image 📷</button>
-</form>
+</div>

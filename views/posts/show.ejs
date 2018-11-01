@@ -5,7 +5,7 @@
     <img src="<%= image %>">
     <p> <%= like.length %> ♥'s</p>
     <h3> <span style="font-weight: bold">Caption:</span> <%= caption %> </h3>
-    <h4> <span style="font-weight: bold">Date taken:</span>  <%= time.toDateString() %> </h4>
+    <h4> <span style="font-weight: bold">Date taken:</span>  <%= time %> </h4>
     <h4> <span style="font-weight: bold">Location:</span> <%= location %> </h4>
   </div>
 
@@ -61,16 +61,18 @@
                     <% }) %>
 
                     <% if (locals.isLoggedIn && addedBy.username === locals.currentUser.username) { %>
-                      <form action="/posts/<%= _id%>?_method=DELETE" method="post">
-                        <button class=" button is-danger is-rounded">Delete this post</button>
-                      </form><br>
-                      <a href="/posts/<%= _id %>/edit"<button class=" button is-primary is-rounded">Update this post</button></a>
                       <% } %>
                       <% } else { %>
                         <p>Comments: </p>
                         <p>No comments yet. Sign in to make one!</p>
                         <% } %>
-
+                        <div class="">
+                          <br>
+                          <form action="/posts/<%= _id%>?_method=DELETE" method="post">
+                            <button class=" button is-danger is-rounded">Delete this post</button>
+                          </form><br>
+                          <a href="/posts/<%= _id %>/edit"<button class=" button is-primary is-rounded">Update this post</button></a>
+                        </div>
                       </div>
                       <br>
                     </div>

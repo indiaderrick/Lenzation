@@ -21,8 +21,6 @@ router.get('/about', postController.aboutRoute);
 router.get('/register', authController.registerFormRoute);
 router.post('/register', authController.registerRoute);
 
-// // UPDATE USER ROUTE:
-// router.get('/profile/edit',  userController.editProfileRoute)
 
 //EDIT USER ROUTE:
 router.get('/users/:userId/edit', secureRoute, userController.editRoute);
