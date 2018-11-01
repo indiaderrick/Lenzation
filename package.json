@@ -9,5 +9,19 @@
     "express-sessions": "^1.0.6",
     "method-override": "^3.0.0",
     "mongoose": "^5.3.7"
-  }
+  },
+  "name": "wdi-project-2",
+  "version": "1.0.0",
+  "description": "An Express CRUD App",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "seed": "node db/create-data",
+    "start": "node app",
+    "start:dev": "nodemon"
+  }    
+}
+
+
+
 }
