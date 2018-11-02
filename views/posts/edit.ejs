@@ -1,15 +1,21 @@
 <div class="columns is-multiline">
-  <div class="columns is-12-desktop">
-    <form class="" action="/posts/<%= _id %>?_method=PUT" method="post">
+  <div class="column is-11-desktop"></div>
 
-      <div class="field">
+  <div class="column is-1-desktop">
+    <br><a href="/posts/<%= _id %>"><button class="button is-small"><i class="fas fa-arrow-left"></i></button></a>
+  </div>
+
+  <div class="columns is-12-desktop">
+    <form class="column is-12-desktop" action="/posts/<%= _id %>?_method=PUT" method="post">
+
+      <div class="field column is-12-desktop">
         <label class="label" for="username"> Photo creds go to: </label>
         <div class="control has-icons-left has-icons-right"hidden >
           <input class="input is-success" type="text" name="username" value="<%= addedBy %>" hidden>
         </div>
       </div>
 
-      <div class="field">
+      <div class="field column is-12-desktop">
         <label class="label" for="image">Photo URL:</label>
         <div class="control has-icons-left has-icons-right">
           <input class="input is-success" type="text" name="image" value="<%= image %>">
@@ -22,7 +28,7 @@
         </div>
       </div>
 
-      <div class="field">
+      <div class="field column is-12-desktop">
         <label class="label" for="time">Date uploaded:</label>
         <div class="control has-icons-left has-icons-right">
           <input class="input is-success" type="text" name="time" value="<%= time %>">
@@ -35,7 +41,7 @@
         </div>
       </div>
 
-      <div class="field">
+      <div class="field column is-12-desktop">
         <label class="label" for="location">Where was this taken?</label>
         <div class="control has-icons-left has-icons-right">
           <input class="input is-success" type="text" name="location" value="<%= location %>">
@@ -48,7 +54,7 @@
         </div>
       </div>
 
-      <div class="field">
+      <div class="field column is-12-desktop">
         <label class="label" for="caption">Add a caption:</label>
         <div class="control has-icons-left has-icons-right">
           <input class="input is-success" type="text" name="caption" value="<%= caption %>">
@@ -64,7 +70,7 @@
       <div class="control">
         <button class="button is-link">Update image 📷 </button>
       </div>
-      
+
     </form>
   </div>
 </div>
