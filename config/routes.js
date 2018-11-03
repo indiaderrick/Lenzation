@@ -26,7 +26,7 @@ router.post('/register', authController.registerRoute);
 router.get('/users/:userId/edit', secureRoute, userController.editRoute);
 
 // UPDATE USER ROUTE:
-router.put('/users/:userId', secureRoute, postController.updateRoute);
+router.put('/users/:userId', secureRoute, userController.updateRoute);
 
 // LOGIN ROUTE:
 router.get('/login', authController.loginFormRoute);

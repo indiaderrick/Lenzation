@@ -7,7 +7,7 @@ function profileRoute(req, res, next) {
     .findById(req.params.userId)
     .populate('addedPosts following')
     .then(user => {
-      console.log(user.followers);
+      // console.log(user.followers);
       res.render('pages/users', user);
     })
     .catch(err => {
@@ -28,7 +28,7 @@ function updateRoute(req, res){
   User
     .findByIdAndUpdate(req.params.userId, req.body)
     .then(user => {
-      res.redirect(`/users/${user._id}`)
+      res.redirect('/');
     });
 }
 
@@ -36,10 +36,10 @@ function follow(req, res, next) {
   User
     .findById(req.params.userId)
     .then(user => {
-      console.log('user before push', user);
+      // console.log('user before push', user);
       user.followers.push(req.params.currentUserId);
       user.save();
-      console.log('user after push', user);
+      // console.log('user after push', user);
       res.redirect(`/pages/${req.params.userId}`);
     })
     .catch(err => {
@@ -53,7 +53,7 @@ function getFollowing(req, res){
     findById(req.params.userId)
     .populate('following followers')
     .then(user => {
-      console.log('-=-=->', user);
+      // console.log('-=-=->', user);
       res.render('pages/following', user);
     });
 }

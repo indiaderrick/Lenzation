@@ -134,3 +134,9 @@ nav, header {
 #inline {
   display: inline-block;
 }
+.opacity{
+  background-color: black;
+}
+.opacity:hover{
+  filter: brightness(50%);
+}
