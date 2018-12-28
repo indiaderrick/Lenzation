@@ -1,6 +1,7 @@
 # General Assembly WDI Project 2: Instagram Clone ("Lenzation")
 
-Link to [GitHub Repo]()
+View Lenzation on [Heroku](https://offtherail.herokuapp.com/)
+View Lenzation's [GitHub Repo](https://github.com/indiaderrick/wdi-project-two)
 
 ## Subtitle
 
@@ -8,22 +9,35 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 
 ## Homepage
-![Homepage](screenshots/home.png)
+
+<p align="center">
+  <img height=400 alt="itemIndex" src="./screenshots/home.png">
+</p>
 
 ## Register
-![Register](screenshots/Register.png)
+
+<p align="center">
+  <img height=400 alt="itemIndex" src="./screenshots/Register.png">
+</p>
 
 ## Explore
 
-![Explore](screenshots/Explore.png)
+<p align="center">
+  <img height=400 alt="itemIndex" src="./screenshots/Explore.png">
+</p>
 
 ## Profile
 
-![Profile](screenshots/Profile.png)
+
+<p align="center">
+  <img height=400 alt="itemIndex" src="./screenshots/Profile.png">
+</p>
 
 ## Show
 
-![Show](screenshots/Show.png)
+<p align="center">
+  <img height=400 alt="itemIndex" src="./screenshots/Show.png">
+</p>
 
 ## Brief
 
