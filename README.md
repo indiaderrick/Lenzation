@@ -1,6 +1,7 @@
 # General Assembly WDI Project 2: Instagram Clone ("Lenzation")
 
 View Lenzation on [Heroku](https://offtherail.herokuapp.com/)
+
 View Lenzation's [GitHub Repo](https://github.com/indiaderrick/wdi-project-two)
 
 ## Subtitle
