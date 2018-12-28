@@ -59,7 +59,7 @@ View Lenzation's [GitHub Repo](https://github.com/indiaderrick/wdi-project-two)
 
 ## The Process
 
-I planned to treat this project as a huge learning opportunity rather than a race to get things done in time. Hence, I made sure that I understood everything I was doing and did not move on until I had a solid foundation at each stage. As planned, I did the basic styling throughout the development process and added the extra bits at the end. By the end of the week I was really starting to get to grips of how to manipulate the data I has, and there was lots more that I wanted to add by this stage - especially with followers/following.
+I planned to treat this project as a huge learning opportunity rather than a race to get things done in time. Hence, I made sure that I understood everything I was doing and did not move on until I had a solid foundation at each stage. As planned, I did the basic styling throughout the development process and added the extra bits at the end. By the end of the week I was really starting to get to grips of how to manipulate the data I had, and there was lots more that I wanted to add by this stage - especially with followers/following.
 
 ## Featured Piece of Code
 
