@@ -1,6 +1,6 @@
 # Instagram Clone ("Lenzation")
 
-View Lenzation on [Heroku](https://offtherail.herokuapp.com/)
+View Lenzation on [Heroku](https://lenzation.herokuapp.com/)
 
 View Lenzation's [GitHub Repo](https://github.com/indiaderrick/wdi-project-two)
 
