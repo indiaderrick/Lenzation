@@ -4,7 +4,7 @@ View Lenzation on [Heroku](https://lenzation.herokuapp.com/)
 
 View Lenzation's [GitHub Repo](https://github.com/indiaderrick/wdi-project-two)
 
- We were given 6 days and the choice to make a restaurant review site, a blog or an instagram clone. I chose to do an instagram clone, Lenzation. In my approach, I was trying to replicate the functionality over the look of instagram. As this was my first real web-app, I had an itch to play around with the styling myself rather than replicating an already beautifully designed app.
+ We were given the choice to make a restaurant review site, a blog or an instagram clone. I chose to do an instagram clone, Lenzation. In my approach, I was trying to replicate the functionality over the look of instagram. As this was my first real web-app, I had an itch to play around with the styling myself rather than replicating an already beautifully designed app.
 
 
 ## Homepage
@@ -76,13 +76,9 @@ A piece of code that was a win for me was the section that only allowed users to
 }
 ```
 
-## Styling
-
-I used two Google Fonts:  
-
 ## Wins and Blockers
 
-NOTES:
+The biggest challenge during this project was figuring out how to do followers. After determining that I could push the current user's ID to a 'followers' array of a particular user to signify that they were following them, it was mainly a issue of how to retrieve the current users ID and how to check whether they had already followed them. For the former, I saved the users ID on req.session when logging in and made available to the follow route via the secure route in place. The latter is explained alongside the code snippet above. Figuring out this process was a huge win for me and I went on to use very similar logic to do the likes.
 
 ## Future Features
 
