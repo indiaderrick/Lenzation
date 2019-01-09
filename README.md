@@ -1,11 +1,25 @@
 # Instagram Clone ("Lenzation")
 
+> Project 2 out of 4 during my Web Development Immersive course at General Assembly
+
 View Lenzation on [Heroku](https://lenzation.herokuapp.com/)
 
 View Lenzation's [GitHub Repo](https://github.com/indiaderrick/wdi-project-two)
 
+### Concept
+
  We were given the choice to make a restaurant review site, a blog or an instagram clone. I chose to do an instagram clone, Lenzation. In my approach, I was trying to replicate the functionality over the look of instagram. As this was my first real web-app, I had an itch to play around with the styling myself rather than replicating an already beautifully designed app.
 
+ ## Technologies Used
+ | Category | List |
+ | ---- | --- |
+ | Languages                            | Javascript (ECMAScript6), EJS, CSS3, HTML5 |
+ | Server Environment                   | Node.js, Express.js, MongoDB |
+ | REST client                          | Insomnia |
+ | Typefaces                            | Google Fonts |
+ | Text Editor                          | Atom |
+ | Browser                              | Chrome |
+ | Version control | Git and GitHub
 
 ## Homepage
 
@@ -39,24 +53,6 @@ View Lenzation's [GitHub Repo](https://github.com/indiaderrick/wdi-project-two)
 </p>
 
 
-## Technologies Used
-
-* CSS3
-
-* JavaScript (ECMAScript 6)
-
-* Git
-
-* GitHub
-
-* Google Fonts
-
-* EJS
-
-* mongoose
-
-* express
-
 ## The Process
 
 I planned to treat this project as a huge learning opportunity rather than a race to get things done in time. Hence, I made sure that I understood everything I was doing and did not move on until I had a solid foundation at each stage. As planned, I did the basic styling throughout the development process and added the extra bits at the end. By the end of the week I was really starting to get to grips of how to manipulate the data I had, and there was lots more that I wanted to add by this stage - especially with followers/following.
@@ -89,3 +85,9 @@ There are lots of things that I could imagine adding to this project, but at the
   - I would like to add a newsfeed page which lists your own posts and the posts of  people that you follow in chronological order, with the most recent at the top (contrary to the explore page which shows all posts by all users).
 
   - Since I was focusing on functionality, I didn't get to spend as much time on the styling or UX considerations as I would have liked too. In future, I would like to improve upon the design and introduce a more unique colour scheme.
+
+  ## Contact
+  #### India Derrick
+  Email : indiaderrick@gmail.com
+
+   [Portfolio](www.indiaderrick.com)| [LinkedIn](https://www.linkedin.com/in/indiaderrick/) | [GitHub](https://github.com/indiaderrick)
